@@ -1,0 +1,49 @@
+{
+  "name": "@laragis/zustand",
+  "version": "0.0.1",
+  "description": "Useful helpers for state management in React with Zustand",
+  "keywords": [
+    "utils",
+    "lodash"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/laragis/zustand.git"
+  },
+  "license": "MIT",
+  "author": "Truong Thanh Tung <ttungbmt@gmail.com>",
+  "sideEffects": false,
+  "exports": {
+    "types": "./dist/zustand.d.ts",
+    "require": "./dist/zustand.js",
+    "default": "./dist/zustand.modern.mjs"
+  },
+  "main": "dist/zustand.js",
+  "umd:main": "dist/zustand.umd.js",
+  "module": "dist/zustand.mjs",
+  "source": "src/index.ts",
+  "types": "dist/zustand.d.ts",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "package.json",
+    "package-lock.json"
+  ],
+  "scripts": {
+    "build": "microbundle --name $npm_package_name --format modern,cjs",
+    "dev": "microbundle --name $npm_package_name watch --format modern,cjs",
+    "dev:debug": "microbundle watch --name $npm_package_name --format modern,cjs --no-compress"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "react-fast-compare": "^3.2.2"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "zustand": ">=4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
